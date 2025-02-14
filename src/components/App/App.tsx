@@ -26,7 +26,7 @@ export default function App() {
         if (!query) return;
         setIsLoading(true);
         setIsError(false);
-        const { results } = await fetchImage(query, page);
+        const { results }: { results: Photo[] } = await fetchImage(query, page);
         if (results.length === 0) {
           toast.error("No images found. Try a different search query.", {
             duration: 2000,
